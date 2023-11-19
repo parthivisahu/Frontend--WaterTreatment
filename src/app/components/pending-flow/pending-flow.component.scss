@@ -1,0 +1,22 @@
+.pending-flows-container {
+    margin-top: 20px;
+    h2 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    mat-table {
+      width: 100%;
+      .custom-header {
+        background-color: #f5f5f5; /* Custom header background color */
+        color: #333; /* Custom header text color */
+      }
+      .custom-cell {
+        color: #555; /* Custom cell text color */
+      }
+      button {
+        margin-right: 5px;
+      }
+    }
+  }
+  

@@ -1,0 +1,40 @@
+<div class="container d-flex flex-column flex-lg-row">
+    <form class="col-lg-6 col-md-8 col-12 mx-auto p-4" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        
+        <p class="h4 mb-4 mx-auto col-lg-6 col-md-8 col-12 text-center">Log In</p>
+        
+        <!-- Email -->
+        <div class="col-lg-8 col-md-6 mx-auto mb-4">
+            <div class="form-outline">
+                <input type="text" id="defaultLoginFormUserName" class="form-control" formControlName="username" placeholder="Username" />
+                <label class="form-label" for="defaultLoginFormUsername"></label>
+            </div>
+        </div>
+        
+        <!-- Password -->
+        <div class="col-lg-8 col-md-6  mx-auto mb-4">
+            <div class="form-outline">
+                <input type="password" id="defaultLoginFormPassword" class="form-control" formControlName="password" placeholder="Password" />
+                <label class="form-label" for="defaultLoginFormPassword"></label>
+            </div>
+        </div>
+        
+        <div class="d-flex mx-auto  justify-content-around">
+            <div>
+                <!-- Forgot password -->
+                <a routerLink="/signup">Forgot password?</a>
+            </div>
+        </div>
+        
+        <!-- Log in button -->
+        <button class="btn btn-info my-4" style="margin-left:45%;" type="submit" onclick="onLogin()">Log in</button>
+        
+        <!-- Register -->
+        <p class="text-center">Not a user? &nbsp;&nbsp;
+            <a routerLink="/signup">Sign up</a>
+        </p>
+    </form>
+    <div class="col-lg-6 col-md-4  col-12 mx-auto order-first order-md-last" id="login-img">
+        <img src="https://samcotech.com/wp-content/uploads/2017/10/Common-Industrial-Water-Treatment-Issues-and-How-to-Fix-Them-1024x682-1.jpg" alt="img-login" style="max-width: 100%;">
+      </div>
+</div>

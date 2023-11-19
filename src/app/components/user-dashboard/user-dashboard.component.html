@@ -1,0 +1,26 @@
+<div class="user-onboarding-container">
+    <h2 class="text-center">User Onboarding Form</h2>
+    <img src="https://cdn.dribbble.com/users/200656/screenshots/2088053/brastemp-2.gif" alt="img" class="logo">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name">
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+  
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password">
+  
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword">
+  
+      <label for="company">Company:</label>
+      <input type="text" id="company" formControlName="company">
+  
+      <label for="location">Location:</label>
+      <input type="text" id="location" formControlName="location">
+  
+      <button type="submit" [disabled]="userForm.invalid" class="submit-btn">Submit</button>
+    </form>
+  </div>
+  

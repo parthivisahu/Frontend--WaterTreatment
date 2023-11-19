@@ -1,0 +1,53 @@
+<!-- Coagulation -->
+
+<div *ngIf="coagulation">
+    <h2>Chemical Coagulation Stats</h2>
+    <ul>
+      <li *ngFor="let stat of coagulation">
+        {{ stat.propertyName }}: {{ stat.propertyValue }}
+      </li>
+    </ul>
+</div>
+
+<!-- Flocculation -->
+
+<div *ngIf="flocculation">
+    <h2>Flocculation Stats</h2>
+    <ul>
+      <li *ngFor="let stat of flocculation">
+        {{ stat.propertyName }}: {{ stat.propertyValue }}
+      </li>
+    </ul>
+</div>
+
+<!-- Sedimentation -->
+
+<div *ngIf="sedimentation">
+    <h2>Sedimentation Stats</h2>
+    <ul>
+      <li *ngFor="let stat of sedimentation">
+        {{ stat.propertyName }}: {{ stat.propertyValue }}
+      </li>
+    </ul>
+</div>  
+
+<!-- Filtration -->
+
+<div *ngIf="filtration">
+    <h2>Filtration Stats</h2>
+    <ul>
+      <li *ngFor="let stat of filtration">
+        {{ stat.propertyName }}: {{ stat.propertyValue }}
+      </li>
+    </ul>
+</div>
+
+<!-- Disinfection -->
+<div *ngIf="disinfection">
+    <h2>Disinfection Stats</h2>
+    <ul>
+      <li *ngFor="let stat of disinfection">
+        {{ stat.propertyName }}: {{ stat.propertyValue }}
+      </li>
+    </ul>
+</div>

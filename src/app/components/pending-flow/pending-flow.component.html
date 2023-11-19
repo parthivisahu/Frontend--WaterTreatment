@@ -1,0 +1,42 @@
+<div class="pending-flows-container">
+    <h2>Pending Flows for Approval</h2>
+    <mat-table class="mat-elevation-z8" [dataSource]="treatmentStatsData" matSort>
+  
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell">ID</th>
+        <td mat-cell *matCellDef="let flow" class="mat-cell">{{ flow.id }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell">Name</th>
+        <td mat-cell *matCellDef="let flow" class="mat-cell">{{ flow.name }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell">Type</th>
+        <td mat-cell *matCellDef="let flow" class="mat-cell">{{ flow.type }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="details">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell">Details</th>
+        <td mat-cell *matCellDef="let flow" class="mat-cell">{{ flow.details }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell">Status</th>
+        <td mat-cell *matCellDef="let flow" class="mat-cell">{{ flow.status }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell">Action</th>
+        <td mat-cell *matCellDef="let flow" class="mat-cell">
+          <button *ngIf="flow.status === 'Pending'" mat-raised-button color="primary" (onclick)="approveFlow(flow.id)">Approve</button>
+          <button *ngIf="flow.status === 'Pending'"  mat-raised-button color="warn" (onclick)="rejectFlow(flow.id)">Reject</button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="['id', 'details', 'status', 'actions']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['id', 'details', 'status', 'actions']"></tr>
+    </mat-table>
+    <!-- <mat-paginator [length]="dataSource.data.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> -->
+</div>

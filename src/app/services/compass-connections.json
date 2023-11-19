@@ -1,0 +1,26 @@
+{
+  "type": "Compass Connections",
+  "version": {
+    "$numberInt": "1"
+  },
+  "connections": [
+    {
+      "id": "3368b239-620a-4623-84a3-59006ce844f8",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1700030343484"
+        }
+      },
+      "favorite": {
+        "name": "Water-Treatment",
+        "color": "color1"
+      },
+      "connectionOptions": {
+        "connectionString": "mongodb+srv://localhost/?authMechanism=DEFAULT",
+        "oidc": {
+          "serializedState": "eyJvaWRjUGx1Z2luU3RhdGVWZXJzaW9uIjowLCJzdGF0ZSI6W119"
+        }
+      }
+    }
+  ]
+}

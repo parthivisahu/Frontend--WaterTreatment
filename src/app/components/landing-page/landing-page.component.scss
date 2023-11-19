@@ -1,0 +1,21 @@
+.landing-gif{
+    width: 100vw;
+    height: 80vh;
+    clip-path: inset(0px 0px 40px 0px);
+}
+
+.example-card {
+    max-width: 300px;
+  }
+  
+  .example-header-image {
+    // background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  
+.plant-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+  

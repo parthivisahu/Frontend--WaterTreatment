@@ -1,0 +1,34 @@
+.treatment-stats-container{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+h3{
+    color: #333;
+    margin-bottom: 2%;
+}
+
+.process-item{
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    h4{
+        margin: 5px 0;
+    }
+}
+
+.process-details{
+    display: flex;
+    align-items: center;
+}
+
+.timer{
+    font-size: 18px;
+    margin-right: 2%;
+    font-weight: bold;
+    color: #333;
+}
+

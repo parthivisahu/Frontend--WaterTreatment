@@ -1,0 +1,51 @@
+<div class="container d-flex p-4 flex-column flex-lg-row">
+    <!-- Default form register -->
+    <form class="text-center col-md-7 col-11 mx-auto p-5" [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+        <hr>
+        <p class="h4 mb-4">Sign up</p>
+
+        <div class="form-row mb-2">
+            <div class="col">
+                <!-- Username -->
+                <input type="text" id="defaultRegisterFormUserName" class="form-control" placeholder="Username" formControlName="username">
+            </div>
+            
+        </div>
+
+        <!-- E-mail -->
+        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-2" placeholder="E-mail" formControlName="email">
+
+        <!-- Password -->
+        <input type="password" id="defaultRegisterFormPassword" class="form-control  mb-2" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" formControlName="password">
+        
+        <!-- Confirm Password -->
+        <input type="password" id="defaultRegisterFormPassword" class="form-control  mb-2" placeholder="Confirm-Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" formControlName="confirm-password">
+
+        <!-- Role (Dropdown) -->
+      <select class="form-control mb-2" id="defaultRegisterFormRole" name="role" formControlName="role">
+    <option value="" disabled selected>Choose an option</option>
+    <option value="user">User</option>
+    <option value="supervisor">Supervisor</option>
+</select>
+
+
+        <!-- Phone number -->
+        <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock" formControlName="phone">
+        <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-2"></small>
+        <br>
+
+        <!-- Sign up button -->
+        <button class="btn btn-info my-2" type="submit">Sign in</button>
+
+        <hr>
+        <p>
+            Already have an account?
+            <a routerLink="login">Log In</a>
+        </p>
+    </form>
+    <!-- Default form register -->
+
+    <div class="sign-up col-lg-5 col-md-5 p-4 mx-auto my-5 order-first order-md-last">
+        <img src="https://www.bourdon-instruments.com/medias/sys_master/root/h53/ha1/9078141583390/5646-0-DCH.jpg" alt="img-signup" style="max-width: 100%">
+    </div>
+</div>

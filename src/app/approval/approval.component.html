@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Pending Approval Requests</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Request ID</th>
+          <th>Request Details</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of pendingRequests">
+          <td>{{ request.id }}</td>
+          <td>{{ request.details }}</td>
+          <td>
+            <button class="btn btn-success" (click)="approveRequest(request.id)">Approve</button>
+            <button class="btn btn-danger" (click)="rejectRequest(request.id)">Reject</button>
+          </td>
+        </tr>
+        <tr *ngIf="pendingRequests.length === 0">
+          <td colspan="3">No pending requests</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

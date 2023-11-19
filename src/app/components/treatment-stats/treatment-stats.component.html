@@ -1,0 +1,10 @@
+<div class="treatment-stats-container">
+    <h3>Treatment Statistics</h3>
+    <div class="process-item" *ngFor="let process of treatmentProcesses">
+        <h4>{{process.name}}</h4>
+        <div class="process-details">
+            <div class="timer">{{process.elapsedTime}}</div>
+        </div>
+
+    </div>
+</div>

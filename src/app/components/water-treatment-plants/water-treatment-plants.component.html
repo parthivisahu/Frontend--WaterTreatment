@@ -1,0 +1,22 @@
+<div class="water-plants-container">
+  <h2>Water Treatment Plants</h2>
+
+  <!-- Add New Plant Form -->
+  <form [formGroup]="plantForm" (ngSubmit)="addWaterPlant()">
+    <div class="add-plant-form">
+      <label for="name">Plant Name:</label>
+      <input type="text" id="name" formControlName="name">
+
+      <label for="location">Plant Location:</label>
+      <input type="text" id="location" formControlName="location">
+
+      <label for="temperature">Temperature of Water:</label>
+      <input type="text" id="temperature" formControlName="temperature">
+
+      <label for="gallonsPresent">Capacity:</label>
+      <input type="text" id="gallonsPresent" formControlName="gallonsPresent">
+
+      <button type="submit" class="button">Add Plant</button>
+    </div>
+  </form>
+</div>

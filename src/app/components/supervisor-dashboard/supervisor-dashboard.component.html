@@ -1,0 +1,18 @@
+<!-- Supervisor Dashboard UI -->
+<div>
+    <!-- Display pending flows -->
+    <h3>Pending Flows:</h3>
+    <ul>
+      <li *ngFor="let flow of pendingFlows">{{ flow }}</li>
+
+    </ul>
+  
+    <!-- Display onboarded plants -->
+    <h3>Onboarded Plants:</h3>
+    <ul>
+      <li *ngFor="let plant of onboardedPlants">{{ plant }}</li>
+    </ul>
+  
+    <!-- Other dashboard components -->
+  </div>
+  
