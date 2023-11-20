@@ -14,7 +14,8 @@ import { NavbarComponent } from 'src/app/helpers/navbar/navbar.component';
   imports: [MatCardModule, MatButtonModule, CommonModule,  MatGridListModule, NavbarComponent]
 })
 export class LandingPageComponent {
-  waterTreatmentPlantsData!: any[];
+  waterTreatmentPlantsData!:any[];
+ 
   newPlant: any = {};
 
   constructor(private backendService: BackendService) { }
@@ -28,6 +29,8 @@ export class LandingPageComponent {
       this.waterTreatmentPlantsData = data;
     });
   }
+
+ 
 
   deleteWaterPlant(_id: string) {
     if(confirm("Are you sure you want to delete this water treatment plant?")) {

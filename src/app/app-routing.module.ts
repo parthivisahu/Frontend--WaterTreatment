@@ -48,10 +48,6 @@ const routes: Routes = [
     component:TreatmentStatsComponent
   },
   {
-    path:'water-stats',
-    component:WaterStatsComponent
-  },
-  {
     path:'landing',
     component:LandingPageComponent
   },

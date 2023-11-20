@@ -32,3 +32,23 @@ h3{
     color: #333;
 }
 
+.example-spacer {
+    flex: 1 1 auto;
+  }
+mat-menu{
+    right:0;
+}
+
+mat-toolbar{
+    background-color: rgba(78, 168, 241, 0.833);
+    color: rgb(18, 23, 30);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: rgb(70, 69, 69);
+}

@@ -32,6 +32,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SupervisorDashboardComponent } from './components/supervisor-dashboard/supervisor-dashboard.component';
 import { ApprovalComponent } from './approval/approval.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardActions, MatCardModule, MatCardTitleGroup } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { TreatmentStatsComponent } from './components/treatment-stats/treatment-stats.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -49,6 +57,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         TreatmentCompleteDialogComponent,
         SupervisorDashboardComponent,
         ApprovalComponent,
+        TreatmentStatsComponent
+        
     ],
     providers: [UserService,TimerService],
     bootstrap: [AppComponent],
@@ -68,7 +78,18 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatInputModule,
         MatButtonModule,
         MatDialogModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatIconModule,
+        MatDividerModule,
+        MatMenuModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatButtonModule,
+        CommonModule,
+        MatGridListModule,
+        NavbarComponent,
+        
+        
         
     ]
 })
