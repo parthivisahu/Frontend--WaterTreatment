@@ -18,3 +18,43 @@ a{
 a:hover{
     color: rgb(70, 69, 69);
 }
+body{
+    background-color: rgb(235, 247, 243);
+  }
+  .landing-gif {
+    display: block;
+    margin: auto;
+    width: 80%; 
+    height: 70%;
+    max-width: 100%; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 20px;
+    color: rgb(71, 78, 76);
+  }
+  
+  .heading:hover {
+    transform: scale(1.1); 
+    color: #47d7ff; 
+  }
+  
+  .example-card {
+      max-width: 300px;
+    }
+    
+    .example-header-image {
+      // background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+      background-size: cover;
+    }
+    
+  .plant-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+    
+  

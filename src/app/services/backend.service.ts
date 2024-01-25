@@ -8,28 +8,25 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class BackendService {
   
-  private baseUrl = 'https://localhost:7288/api'; // Adjust the URL to match your .NET backend URL
-
+  private baseUrl = 'https://localhost:7288/api'; 
   constructor(private http: HttpClient,  private snackBar: MatSnackBar) { }
   approveFlow(id: number): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/flows/approve/${id}`, {})
+    return this.http.put<any>(`${this.baseUrl}/pendingflows/${id}`, {})
       .pipe(
-        // Show notification upon approval success
         tap(() => {
           this.snackBar.open('Request approved successfully', 'Close', {
-            duration: 3000, // Set duration for the notification
+            duration: 3000,
           });
         })
       );
   }
 
   rejectFlow(id: number): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/flows/reject/${id}`, {})
+    return this.http.put<any>(`${this.baseUrl}/pendingflows/${id}`, {})
       .pipe(
-        // Show notification upon rejection success
         tap(() => {
           this.snackBar.open('Request rejected successfully', 'Close', {
-            duration: 3000, // Set duration for the notification
+            duration: 3000, 
           });
         })
       )
@@ -54,13 +51,13 @@ export class BackendService {
     return this.http.get<any[]>(`${this.baseUrl}/WaterTreatmentPlant`);
   }
 
-  addWaterPlant(plant: any): Observable<any> {
+  addWaterPlant(plant: string): Observable<any> {
     console.log(plant);
     return this.http.post<any>(`${this.baseUrl}/WaterTreatmentPlant`, plant);
     
   }
 
-  editWaterPlant(plant:any):Observable<any>{
+  editWaterPlant(plant:string):Observable<any>{
     return this.http.put<any>(`${this.baseUrl}/WaterTreatmentPlant`, {})
   }
 

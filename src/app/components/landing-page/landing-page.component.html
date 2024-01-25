@@ -1,7 +1,60 @@
 <!-- <app-navbar></app-navbar> -->
+<div>
+  <mat-toolbar>
+    
+    <a routerLink="/landing">H<sub>2</sub>O Purify</a>
+    <span class="example-spacer"></span>
+    
+    <a routerLink="/user">User Onboarding</a>
+    <span class="example-spacer"></span>
+    
+    <a routerLink="/pending-flow">Pending Flows</a>
+    <span class="example-spacer"></span>
+    
+    <a routerLink="/plants">Plants</a>
+    <span class="example-spacer"></span>
+    
+    <button mat-icon-button aria-label="notification icon" [matMenuTriggerFor]="notificationsMenu">
+      <mat-icon>notifications</mat-icon>
+    </button>
+    
+    <mat-menu #notificationsMenu="matMenu" xPosition="before" yPosition="above" hasBackdrop="false"  overlapTrigger="false">
+      <button mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        <span>Profile</span>
+      </button> 
+    </mat-menu>
+    
+    <a mat-icon-button class="nav-icon"  aria-label="settings" [matMenuTriggerFor]="settingsMenu">
+      <mat-icon>account_circle</mat-icon>
+    </a>
+    
+    <mat-menu #settingsMenu="matMenu" xPosition="after" hasBackdrop="false"  overlapTrigger="false">
+      <button mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        <span>Profile</span>
+      </button>
+      
+      <button mat-menu-item>
+        <mat-icon>leaderboard</mat-icon>
+        <span>Analytics</span>
+      </button>
+    
+      <mat-divider></mat-divider>
+      
+      <button mat-menu-item routerLink="/login-main">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Log out</span>
+      </button>
+    </mat-menu>    
+  </mat-toolbar>
+</div>
 
-<img class="landing-gif" src="https://media.tenor.com/8R7ilCu-W2wAAAAd/filter-zero-emission-drinking-water.gif" alt="landing-gif" width="100%">
+<router-outlet></router-outlet>
 
+<img class="landing-gif" src="https://i.pinimg.com/originals/3a/33/eb/3a33ebeeaffc4046358bf877212793d2.gif" alt="landing-gif" width="100%">
+
+<hr width="80%" style="margin-left: 10%;">
 <h2 style="text-align: center;">Water Treatment Plants</h2>
   <mat-grid-list cols="3" rowHeight="400px">
     <mat-grid-tile *ngFor="let plant of waterTreatmentPlantsData">
@@ -14,7 +67,7 @@
         </mat-card-header>
         <img  mat-card-image src="https://transcendinfra.com/wp-content/uploads/2022/08/Wastewater-Treatment-Plant-Design.png" alt="Random Photo">
         <mat-card-actions>
-          <button mat-button>View</button>
+          <button mat-button routerLink="/plant-profile">View</button>
           <button mat-button>Remove</button>
         </mat-card-actions>
       </mat-card>

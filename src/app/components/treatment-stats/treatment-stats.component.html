@@ -1,20 +1,17 @@
 
 <div>
     <mat-toolbar>
-      <button mat-icon-button aria-label="menu">
+      <!-- <button mat-icon-button aria-label="menu">
         <mat-icon>menu</mat-icon>
-      </button>
+      </button> -->
       
-      <a routerLink="/landing">H<sub>2</sub>O Purify</a>
+      <a routerLink="/supervisor">H<sub>2</sub>O Purify</a>
       <span class="example-spacer"></span>
       
       <a routerLink="/progress">Progress</a>
       <span class="example-spacer"></span>
       
       <a routerLink="/approval">Approval</a>
-      <span class="example-spacer"></span>
-      
-      <a routerLink="/plants">Plants</a>
       <span class="example-spacer"></span>
       
       <a routerLink="/stats">Water-Stats</a>
@@ -26,8 +23,8 @@
       
       <mat-menu #notificationsMenu="matMenu" xPosition="before" yPosition="above" hasBackdrop="false"  overlapTrigger="false">
         <button mat-menu-item>
-          <mat-icon>account_circle</mat-icon>
-          <span>Profile</span>
+          <mat-icon>check</mat-icon>
+          <span>Request Approved</span>
         </button> 
       </mat-menu>
       
@@ -36,46 +33,39 @@
       </a>
       
       <mat-menu #settingsMenu="matMenu" xPosition="after" hasBackdrop="false"  overlapTrigger="false">
-        <button mat-menu-item>
-          <mat-icon>account_circle</mat-icon>
-          <span>Profile</span>
-        </button>
         
         <button mat-menu-item>
           <mat-icon>leaderboard</mat-icon>
-          <span>Analytics</span>
-        </button>
-        
-        <mat-divider></mat-divider>
-        
-        <button mat-menu-item>
-          <mat-icon>settings</mat-icon>
-          <span>Settings & Privacy</span>
-        </button>
-        
-        <button mat-menu-item>
-          <mat-icon>help</mat-icon>
-          <span>Help Center</span>
+          <span routerLink="/stats">Analytics</span>
         </button>
         
         <mat-divider></mat-divider>
         
         <button mat-menu-item>
           <mat-icon>exit_to_app</mat-icon>
-          <span>Log out</span>
+          <span routerLink="/login-main">Log out</span>
         </button>
       </mat-menu>    
     </mat-toolbar>
   </div>
   <router-outlet></router-outlet>
 
-<div class="treatment-stats-container">
-    <h3>Treatment Statistics</h3>
-    <div class="process-item" *ngFor="let process of treatmentProcesses">
-        <h4>{{process.name}}</h4>
-        <div class="process-details">
-            <div class="timer">{{process.elapsedTime}}</div>
-        </div>
+<div class="treatment-stats-container" style="display: flex; justify-content: center;">
+  <canvas style="margin-left: 10%;" baseChart
+  [type]="'pie'"
+  [datasets]="pieChartDatasets"
+  [labels]="pieChartLabels"
+  [options]="pieChartOptions"
+  [plugins]="pieChartPlugins"
+  [legend]="pieChartLegend">
+</canvas>
+<div style="display: block; margin-left: 10%;">
+  <canvas baseChart width="700" height="400"
+    [type]="'line'"
+    [data]="lineChartData"
+    [options]="lineChartOptions"
+    [legend]="lineChartLegend">
+  </canvas>
+</div>
 
-    </div>
 </div>

@@ -7,18 +7,18 @@ import { BackendService } from '../services/backend.service'; // Import your bac
   styleUrls: ['./approval.component.scss']
 })
 export class ApprovalComponent implements OnInit {
-  pendingRequests: any[] = []; // Array to store pending requests
+  pendingRequests: any[] = [];
 
   constructor(private backendService: BackendService) { }
 
   ngOnInit(): void {
-    this.getPendingRequests(); // Fetch pending requests on component initialization
+    this.getPendingRequests(); 
   }
 
   getPendingRequests(): void {
     this.backendService.getPendingRequests().subscribe(
       (requests: any[]) => {
-        this.pendingRequests = requests; // Assign fetched pending requests to the component variable
+        this.pendingRequests = requests; 
       },
       (error: any) => {
         console.error('Error fetching pending requests:', error);
@@ -30,7 +30,7 @@ export class ApprovalComponent implements OnInit {
     this.backendService.approveRequest(requestId).subscribe(
       (response: any) => {
         console.log('Request approved:', response);
-        this.getPendingRequests(); // Refresh pending requests after approval
+        this.getPendingRequests(); 
       },
       (error: any) => {
         console.error('Error approving request:', error);
@@ -42,7 +42,7 @@ export class ApprovalComponent implements OnInit {
     this.backendService.rejectRequest(requestId).subscribe(
       (response: any) => {
         console.log('Request rejected:', response);
-        this.getPendingRequests(); // Refresh pending requests after rejection
+        this.getPendingRequests(); 
       },
       (error: any) => {
         console.error('Error rejecting request:', error);

@@ -16,14 +16,14 @@ export class SignupComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
 
-  user: UserDTO = { username: '', password: '' };
+  user: UserDTO = { username: '', password: ''};
   
   onSignUp() {
     this.authService.register(this.user).subscribe(
       (response: any) => {
         console.log('User registered successfully!', response);
         console.log(this.selectedRole);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/login-main']);
       },
       (error: any) => {
         this.errorMessage = error.message || 'An error occurred during signup.';

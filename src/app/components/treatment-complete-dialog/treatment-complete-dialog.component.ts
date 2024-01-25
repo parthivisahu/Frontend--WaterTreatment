@@ -20,6 +20,6 @@ export class TreatmentCompleteDialogComponent {
     this.navigateToLandingPage(); 
   }
   navigateToLandingPage(): void {
-    this.router.navigate(['/landing']);
+    this.router.navigate(['/supervisor']);
   }
 }

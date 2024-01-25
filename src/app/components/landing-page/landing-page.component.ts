@@ -5,13 +5,19 @@ import { BackendService } from 'src/app/services/backend.service';
 import { CommonModule } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { NavbarComponent } from 'src/app/helpers/navbar/navbar.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, CommonModule,  MatGridListModule, NavbarComponent]
+  imports: [MatCardModule, MatToolbarModule, MatIconModule,MatMenuModule, MatDividerModule, MatButtonModule, CommonModule,  MatGridListModule, NavbarComponent, RouterModule]
 })
 export class LandingPageComponent {
   waterTreatmentPlantsData!:any[];

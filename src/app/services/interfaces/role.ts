@@ -31,15 +31,16 @@ export interface UserDTO {
 
 
 export interface PlantDetails {
+    id: string;
     name: string;
     location: string;
     temperature: number;
     gallonsPresent: number;
-    coagulationPercentage: number;
-    flocculationPercentage: number;
-    sedimentationPercentage: number;
-    filtrationPercentage: number;
-    disinfectionPercentage: number;
+    coagulation: number;
+    flocculation: number;
+    sedimentation: number;
+    filtration: number;
+    disinfection: number;
   }
   
   

@@ -1,11 +1,11 @@
 
 <div>
   <mat-toolbar>
-    <button mat-icon-button aria-label="menu">
+    <!-- <button mat-icon-button aria-label="menu">
       <mat-icon>menu</mat-icon>
-    </button>
+    </button> -->
     
-    <a routerLink="/landing">H<sub>2</sub>O Purify</a>
+    <a routerLink="/supervisor">H<sub>2</sub>O Purify</a>
     <span class="example-spacer"></span>
     
     <a routerLink="/progress">Progress</a>
@@ -45,27 +45,16 @@
       
       <mat-divider></mat-divider>
       
-      <button mat-menu-item>
-        <mat-icon>settings</mat-icon>
-        <span>Settings & Privacy</span>
-      </button>
-      
-      <button mat-menu-item>
-        <mat-icon>help</mat-icon>
-        <span>Help Center</span>
-      </button>
-      
-      <mat-divider></mat-divider>
-      
-      <button mat-menu-item>
+      <button mat-menu-item routerLink="/signup">
         <mat-icon>exit_to_app</mat-icon>
-        <span>Log out</span>
+        <span routerLink="/login-main">Log out</span>
       </button>
     </mat-menu>    
   </mat-toolbar>
 </div>
 <router-outlet></router-outlet>
 
+<div class="container">
 <app-progress #progress (stateChange)="onStateChange($event)" style="height: fit-content;">
 
 <!-- Coagulation -->
@@ -73,7 +62,7 @@
   <app-progress-step >
     <h1>Step 1</h1>
     <h2>Coagulation</h2>
-    <img src="https://www.researchgate.net/publication/335571051/figure/fig1/AS:799062601236480@1567522778401/A-simplified-diagram-of-the-coagulation-process-employed-during-drinking-water-treatment.ppm" alt="" width="90%">
+    <img src="https://www.researchgate.net/publication/335571051/figure/fig1/AS:799062601236480@1567522778401/A-simplified-diagram-of-the-coagulation-process-employed-during-drinking-water-treatment.ppm" alt="" width="50%" style="margin-left: 25%;">
     <br>
     <p>
       <br>
@@ -84,58 +73,50 @@
     </button> &nbsp;
     <button mat-raised-button (click)="generatePlantPdf()">Print Details</button>
   </app-progress-step>
-
-<!-- Flocculation -->
-
+  
+  <!-- Flocculation -->
+  
   <app-progress-step>
     <h1>step 2</h1>
     <h2>Flocculation</h2>
-    <img src="https://genesiswatertech.com/wp-content/uploads/2023/07/wastewater-treatment-flocculation.jpg" alt="" width="100%">
+    <img src="https://genesiswatertech.com/wp-content/uploads/2023/07/wastewater-treatment-flocculation.jpg" alt="" width="50%" style="margin-left: 20%;">
     <br>
     <p>
       <br>
       Flocculation, a vital step in water treatment, involves the gentle mixing of water after the addition of coagulants. During this process, tiny destabilized particles formed in the initial coagulation phase start to collide and stick together, forming larger aggregates known as flocs. These larger flocs are easier to separate from the water and settle more effectively during sedimentation. Flocculation aids in the removal of impurities by encouraging the formation of larger particles, setting the stage for efficient filtration and ensuring cleaner, safer water for consumption.
     </p>
-    <form class="example-form" [formGroup]="testForm">
+    <!-- <form class="example-form" [formGroup]="testForm">
       <mat-form-field class="example-full-width">
         <mat-label>Complain</mat-label>
         <input
-          formControlName="food"
-          matInput
-          placeholder="Ex. Pizza"
-          value="Sushi"
+        formControlName="food"
+        matInput
+        placeholder="Ex. Pizza"
+        value="Sushi"
         />
       </mat-form-field>
-<br>
+      <br>
       <mat-form-field class="example-full-width">
         <mat-label>Leave a comment</mat-label>
         <textarea
-          matInput
-          formControlName="comment"
-          placeholder="Ex. It makes me feel..."
+        matInput
+        formControlName="comment"
+        placeholder="Ex. It makes me feel..."
         ></textarea>
-      </mat-form-field>
-      <br>
-      <button progressStepPrev mat-raised-button color="accent">prev</button> &nbsp;
-      <button
-        style="margin-left: 10px"
-        progressStepNext
-        [disabled]="!testForm.valid"
-        mat-raised-button
-        color="primary"
-      >
-        next
-      </button> &nbsp;
-      <button mat-raised-button (click)="generatePlantPdf()">Print Details</button>
-    </form>
+      </form>
+    </mat-form-field> -->
+    <br>
+    <button progressStepPrev mat-raised-button color="accent">prev</button> &nbsp;
+    <button mat-raised-button color="primary" (click)="goNext(progress)">next</button> &nbsp;
+    <button mat-raised-button (click)="generatePlantPdf()">Print Details</button>
   </app-progress-step>
-
-<!-- Sedimentation -->
-
+  
+  <!-- Sedimentation -->
+  
   <app-progress-step>
     <h1>step 3</h1>
     <h2>Sedimentation</h2>
-    <img src="https://waterfilterguru.com/wp-content/uploads/2023/02/How-Sedimentation-Work-in-Water-Treatment.png" alt="" width="70%" height="20%">
+    <img src="https://waterfilterguru.com/wp-content/uploads/2023/02/How-Sedimentation-Work-in-Water-Treatment.png" alt="" width="40%" style="margin-left: 30%;" >
     <p>
       Sedimentation is a crucial phase in the water treatment process where water containing flocs moves into a sedimentation basin. During this stage, the flocs, which are larger particles formed during coagulation and flocculation, settle down due to gravity. As the water becomes still in the basin, these heavier particles gradually sink to the bottom. This settling process allows for the separation of impurities and flocs from the water, leading to clearer water at the top. Sedimentation plays a vital role in removing suspended particles and improving water clarity before further treatment steps, such as filtration, ensuring the production of cleaner and potable water.
     </p>
@@ -143,16 +124,16 @@
     <button progressStepNext mat-raised-button color="primary">next</button> &nbsp;
     <button mat-raised-button (click)="generatePlantPdf()">Print Details</button>
   </app-progress-step>
-
-<!-- Filtration -->
-
+  
+  <!-- Filtration -->
+  
   <app-progress-step>
     <h1>step 4</h1>
     <h2>Filtration</h2>
-    <img src="https://secure.caes.uga.edu/extension/publications/files/html/B1523/images/blobid02.png" alt="" width="70%" height="20%">
+    <img src="https://secure.caes.uga.edu/extension/publications/files/html/B1523/images/blobid02.png" alt="" width="40%" style="margin-left: 30%;">
     <p>
       Once the flocs have settled to the bottom of the water, the clear water on top is filtered to separate additional solids from the water. During filtration, the clear water passes through filters that have different pore sizes and are made of different materials (such as sand, gravel, and charcoal). These filters remove dissolved particles and germs, such as dust, chemicals, parasites, bacteria, and viruses. Activated carbon filters also remove any bad odors.
-
+      
       Water treatment plants can use a process called ultrafiltration in addition to or instead of traditional filtration. During ultrafiltration, the water goes through a filter membrane with very small pores. This filter only lets through water and other small molecules (such as salts and tiny, charged molecules).
       
       Reverse osmosisexternal icon is another filtration method that removes additional particles from water. Water treatment plants often use reverse osmosis when treating recycled waterexternal icon (also called reused water) or salt water for drinking.
@@ -161,16 +142,16 @@
     <button progressStepNext mat-raised-button color="primary">next</button> &nbsp;
     <button mat-raised-button (click)="generatePlantPdf()">Print Details</button>
   </app-progress-step>
-
-<!-- Disinfection -->
-
+  
+  <!-- Disinfection -->
+  
   <app-progress-step>
     <h1>step 5</h1>
     <h2>Disinfection</h2>
-    <img src="https://www.alfaauv.com/wp-content/uploads/UV-Disinfection-System-for-Water-Treatment-Blog.png" alt="" width="80%" height="10%">
+    <img src="https://www.netsolwater.com/netsol-water/assets/img/product-images/Disinfection_via_UV_light,_Cost_saving_disinfection_technology.jpg" alt="" width="40%" style="margin-left: 30%;">
     <p>
       After the water has been filtered, water treatment plants may add one or more chemical disinfectants (such as chlorine, chloramine, or chlorine dioxide) to kill any remaining parasites, bacteria, or viruses. To help keep water safe as it travels to homes and businesses, water treatment plants will make sure the water has low levels of the chemical disinfectant when it leaves the treatment plant. This remaining disinfectant kills germs living in the pipes between the water treatment plant and your tap.
-
+      
       In addition to or instead of adding chlorine, chloramine, or chlorine dioxide, water treatment plants can also disinfect water using ultraviolet (UV) light or ozone. UV light and ozone work well to disinfect water in the treatment plant, but these disinfection methods do not continue killing germs as water travels through the pipes between the treatment plant and your tap.
     </p>
     <button progressStepPrev mat-raised-button color="accent">prev</button>&nbsp;
@@ -178,3 +159,4 @@
     <button mat-raised-button (click)="generatePlantPdf()">Print Details</button>
   </app-progress-step>
 </app-progress>
+</div>

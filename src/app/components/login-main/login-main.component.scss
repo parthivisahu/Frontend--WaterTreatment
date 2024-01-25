@@ -1,0 +1,35 @@
+.card {
+    background-color: #fefefe;
+    border: 1px solid #dce5ed;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-img-top {
+    width: 60%;
+    height: 350px;
+    object-fit: fill;
+    border-radius: 50%;
+    margin-left: 20%;
+    margin-top: 10%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .card:hover .card-img-top {
+    transform: scale(1.1);
+  }
+
+  .row {
+    text-align: center;
+  }
+  .container {
+    margin-top: 2%;
+    background-color: #bdd7f4; 
+    padding: 30px;
+    border-radius: 20px;
+  }

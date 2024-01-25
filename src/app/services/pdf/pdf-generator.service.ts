@@ -17,7 +17,7 @@ export class PdfGeneratorService {
       const headers = [['Plant Details', 'Data']];
       const bodyData = plantDetails.map((plant) => [
         `Plant Name: ${plant.name}`,
-        `Location: ${plant.location}\nTemperature: ${plant.temperature}°C\nGallons: ${plant.gallonsPresent}\nCoagulation: ${plant.coagulationPercentage}%\nFlocculation: ${plant.flocculationPercentage}%\nSedimentation: ${plant.sedimentationPercentage}%\nFiltration: ${plant.filtrationPercentage}%\nDisinfection: ${plant.disinfectionPercentage}%`,
+        `Location: ${plant.location}\nTemperature: ${plant.temperature}°C\nGallons: ${plant.gallonsPresent}\nCoagulation: ${plant.coagulation}%\nFlocculation: ${plant.flocculation}%\nSedimentation: ${plant.sedimentation}%\nFiltration: ${plant.filtration}%\nDisinfection: ${plant.disinfection}%`,
       ]);
 
       (pdf as any).autoTable({

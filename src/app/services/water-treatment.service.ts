@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WaterTreatmentService {
-
-  private apiUrl = 'https://localhost:7288/api'; // Replace with your API URL
+  
+  private apiUrl = 'https://localhost:7288/api';
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +29,9 @@ export class WaterTreatmentService {
 
   getDisinfection(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/disinfection`);
+  }
+  getWaterPlants(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/WaterTreatmentPlant`);
   }
 }
 

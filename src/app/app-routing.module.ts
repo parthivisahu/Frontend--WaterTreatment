@@ -7,25 +7,40 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 import { PendingFlowComponent } from './components/pending-flow/pending-flow.component';
 import { WaterTreatmentPlantsComponent } from './components/water-treatment-plants/water-treatment-plants.component';
 import { TreatmentStatsComponent } from './components/treatment-stats/treatment-stats.component';
-import { WaterStatsComponent } from './components/water-stats/water-stats.component';
-import { ProgressComponent } from './progress/progress.component';
 import { ProgressContainerComponent } from './components/progress-container/progress-container.component';
 import { ApprovalComponent } from './approval/approval.component';
-import { HomeComponent } from './components/home/home.component';
 import { SupervisorDashboardComponent } from './components/supervisor-dashboard/supervisor-dashboard.component';
+import { PlantProfileComponent } from './plant-profile/plant-profile.component';
+import { AuthGuard } from './services/auth/auth.guard';
+import { LoginMainComponent } from './components/login-main/login-main.component';
+import { LoginSupervisorComponent } from './components/login-supervisor/login-supervisor.component';
 
 const routes: Routes = [
   { path: '', 
   redirectTo: '/login',
    pathMatch: 'full' 
   },
+  { 
+    path: 'login/user', 
+    component: LoginComponent }, 
+  { 
+    path: 'login/supervisor', 
+    component: LoginComponent },
   // {
   //   path:'',
   //   component: LandingPageComponent
   // },
   {
-    path:'login',
-    component: LoginComponent
+    path:'login-supervisor',
+    component:LoginSupervisorComponent
+  },
+  {
+    path:'supervisor',
+    component:SupervisorDashboardComponent,
+  },
+  {
+    path:'login-main',
+    component: LoginMainComponent
   },
   {
     path:'signup',
@@ -60,8 +75,8 @@ const routes: Routes = [
     component:ApprovalComponent
   },
   {
-    path:'supervisor',
-    component:SupervisorDashboardComponent
+    path:'plant-profile',
+    component:PlantProfileComponent
   }
 ];
 

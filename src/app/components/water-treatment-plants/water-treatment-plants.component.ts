@@ -28,7 +28,12 @@ export class WaterTreatmentPlantsComponent implements OnInit {
       name: ['', Validators.required],
       location: ['', Validators.required],
       temperature: ['', Validators.required],
-      gallonsPresent: ['', Validators.required]
+      gallonsPresent: ['', Validators.required],
+      coagulation:['',Validators.required],
+      flocculation:['',Validators.required],
+      sedimentation:['',Validators.required],
+      filtration:['',Validators.required],
+      disinfection:['',Validators.required],
     });
   }
 
@@ -44,7 +49,7 @@ export class WaterTreatmentPlantsComponent implements OnInit {
         console.log('Plant added');
         this.fetchWaterPlants();
         // Optionally, you can reset the form after successful addition:
-        // this.plantForm.reset();
+        this.plantForm.reset();
       });
     }
   }

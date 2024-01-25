@@ -18,7 +18,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort'; 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TimerService } from './services/timer/timer.service';
-import { WaterStatsComponent } from './components/water-stats/water-stats.component';
 import { FormsModule } from '@angular/forms';
 import { ProgressStepComponent } from './progress/progress-step/progress-step.component';
 import { ProgressStepDirective } from './progress/progress-step.directive';
@@ -40,6 +39,13 @@ import { MatCardActions, MatCardModule, MatCardTitleGroup } from '@angular/mater
 import { CommonModule } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { TreatmentStatsComponent } from './components/treatment-stats/treatment-stats.component';
+import { PlantProfileComponent } from './plant-profile/plant-profile.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { RouterModule } from '@angular/router';
+import { LoginMainComponent } from './components/login-main/login-main.component';
+import { LoginSupervisorComponent } from './components/login-supervisor/login-supervisor.component';
+import { NgChartsModule } from 'ng2-charts';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -49,7 +55,6 @@ import { TreatmentStatsComponent } from './components/treatment-stats/treatment-
         UserDashboardComponent,
         PendingFlowComponent,
         WaterTreatmentPlantsComponent,
-        WaterStatsComponent,
         ProgressStepComponent,
         ProgressStepDirective,
         ProgressComponent,
@@ -57,12 +62,17 @@ import { TreatmentStatsComponent } from './components/treatment-stats/treatment-
         TreatmentCompleteDialogComponent,
         SupervisorDashboardComponent,
         ApprovalComponent,
-        TreatmentStatsComponent
-        
+        TreatmentStatsComponent,
+        PlantProfileComponent,
+        LoginMainComponent,
+        LoginSupervisorComponent
     ],
     providers: [UserService,TimerService],
     bootstrap: [AppComponent],
-    imports: [
+    imports: 
+    [ RouterModule.forChild([
+        { path: 'plant-profile', component: PlantProfileComponent },
+      ]),
         BrowserModule,
         AppRoutingModule,
         NavbarComponent,
@@ -88,9 +98,12 @@ import { TreatmentStatsComponent } from './components/treatment-stats/treatment-
         CommonModule,
         MatGridListModule,
         NavbarComponent,
+        NgChartsModule
         
-        
-        
-    ]
-})
+    ],
+    exports: [RouterModule],
+    
+}
+)
+
 export class AppModule { }

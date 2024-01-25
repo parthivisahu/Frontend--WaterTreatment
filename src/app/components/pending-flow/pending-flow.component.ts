@@ -29,37 +29,40 @@ export class PendingFlowComponent implements OnInit, AfterViewInit {
   }
 
   approveFlow(flowId: number) {
-    // Update the status to 'Approved' in the backend through API call
-    this.backendService.addPending(flowId).subscribe(() => {
-      // Update the status locally after successful approval
+    this.backendService.approveFlow(flowId).subscribe(() => {
       const flowIndex = this.treatmentStatsData.findIndex((flow) => flow.id === flowId);
       if (flowIndex !== -1) {
         this.treatmentStatsData[flowIndex].status = 'Approved';
         this.dataSource.data = [...this.treatmentStatsData];
+  
+        this.snackBar.open('Flow Successfully Approved', 'Close', {
+          duration: 2000,
+        });
       }
     });
   }
-
+  
   rejectFlow(flowId: number) {
-    // Update the status to 'Rejected' in the backend through API call
     this.backendService.rejectPending(flowId).subscribe(() => {
-      // Update the status locally after successful rejection
       const flowIndex = this.treatmentStatsData.findIndex((flow) => flow.id === flowId);
       if (flowIndex !== -1) {
         this.treatmentStatsData[flowIndex].status = 'Rejected';
         this.dataSource.data = [...this.treatmentStatsData];
+  
+        this.snackBar.open('Flow Successfully Rejected', 'Close', {
+          duration: 2000,
+        });
       }
     });
   }
 
   displayedColumns: string[] = ['id', 'details', 'status', 'actions'];
 
-  // Inject MatSort and MatPaginator as ViewChild
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort; // set up the sort
-    this.dataSource.paginator = this.paginator; // set up the paginator
+    this.dataSource.sort = this.sort; 
+    this.dataSource.paginator = this.paginator; 
   }
 }

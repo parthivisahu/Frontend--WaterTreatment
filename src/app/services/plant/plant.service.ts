@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PlantService {
-  private apiUrl = 'your_api_endpoint'; // Replace with your API endpoint
+  private apiUrl = 'http:https://localhost:7288/api'; 
 
   constructor(private http: HttpClient) {}
 

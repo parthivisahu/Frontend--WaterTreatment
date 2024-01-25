@@ -19,9 +19,12 @@
     "@angular/material": "^16.2.12",
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
-    "@angular/router": "^16.2.0",
+    "@angular/router": "^16.2.12",
+    "auth-guard": "^1.0.12",
+    "chart.js": "^4.4.0",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.7.1",
+    "ng2-charts": "^5.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

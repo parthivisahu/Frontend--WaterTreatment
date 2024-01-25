@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="profile-container">
+    <div class="profile-header">
+      <h1>Water Treatment Plant Profile</h1> &nbsp;&nbsp;&nbsp;
+      <a routerLink="/landing">Back to List</a>
+    </div>
+  
+    <div class="profile-info">
+      <div>
+        <img src="https://5.imimg.com/data5/TH/ZF/UG/SELLER-6489363/wastewater-treatment-plants.PNG" alt="Plant Image" class="profile-image">
+      </div>
+  
+      <div>
+        <h2>Plant Details</h2>
+        <ul>
+          <li>Plant Name: Bisleri {{ plant?.name }}</li>
+          <li>Plant Location: Hyderabad{{ plant?.location }}</li>
+          <li>Capacity: 10909 {{ plant?.gallonsPresent }}</li>
+          <li>Coagulation: 78%{{ plant?.temperature}}</li>
+          <li>Flocculation: 67%{{ plant?.temperature}}</li>
+          <li>Sedimentation: 43% {{ plant?.temperature}}</li>
+          <li>Filtration: 64% {{ plant?.temperature}}</li>
+          <li>Disinfection: 12%{{ plant?.temperature}}</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="profile-description">
+      <p>The {{ plant?.name }} water treatment plant is a modern facility that uses advanced technologies to provide clean and safe drinking water to the community. The plant has a capacity of {{ plant?.gallonsPresent }} million gallons per day and serves a population of over 10000 people.</p>
+    </div>
+  
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <ul>
+        <li>Email: bisleri@gmail.com</li>
+      
+      </ul>
+    </div>
+  </div>

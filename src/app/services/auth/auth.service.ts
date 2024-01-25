@@ -8,28 +8,42 @@ import { UserDTO } from '../interfaces/role';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:7288/api/Auth'; 
+  private apiUrl = 'https://localhost:7288/api/Auth';
+  private mongoDBApiUrl = 'mongodb://localhost:27017'; 
 
   constructor(private http: HttpClient) {}
 
+  private userRoles: string[] = []; 
+
+  getUserRoles(): string[] {
+    return this.userRoles;
+  }
   // User registration
   register(user: UserDTO): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/register`, user);
-      
   }
 
   // User login
   login(user: UserDTO): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/login`, user).pipe(
       map(response => {
-        // Optional: Perform any processing on the response if needed
         return response;
       }),
       catchError(error => {
-        return throwError(error); // Handle error
+        return throwError(error); 
       })
     );
   }
 
-  // Other authentication-related methods (logout, token management, etc.) can be added here
+  sendDataToMongoDB(userData: UserDTO): Observable<any> {
+    const requestBody = {
+      username: userData.username,
+    };
+
+    return this.http.post<any>(this.mongoDBApiUrl, requestBody).pipe(
+      catchError(error => {
+        return throwError(error); 
+      })
+    );
+  }
 }

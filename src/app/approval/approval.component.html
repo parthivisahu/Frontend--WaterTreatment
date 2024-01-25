@@ -1,11 +1,11 @@
 
 <div>
   <mat-toolbar>
-    <button mat-icon-button aria-label="menu">
+    <!-- <button mat-icon-button aria-label="menu">
       <mat-icon>menu</mat-icon>
-    </button>
+    </button> -->
     
-    <a routerLink="/landing">H<sub>2</sub>O Purify</a>
+    <a routerLink="/supervisor">H<sub>2</sub>O Purify</a>
     <span class="example-spacer"></span>
     
     <a routerLink="/progress">Progress</a>
@@ -46,18 +46,6 @@
       <mat-divider></mat-divider>
       
       <button mat-menu-item>
-        <mat-icon>settings</mat-icon>
-        <span>Settings & Privacy</span>
-      </button>
-      
-      <button mat-menu-item>
-        <mat-icon>help</mat-icon>
-        <span>Help Center</span>
-      </button>
-      
-      <mat-divider></mat-divider>
-      
-      <button mat-menu-item>
         <mat-icon>exit_to_app</mat-icon>
         <span>Log out</span>
       </button>
@@ -82,7 +70,7 @@
           <td>{{ request.id }}</td>
           <td>{{ request.details }}</td>
           <td>
-            <button class="btn btn-success" (click)="approveRequest(request.id)">Approve</button>
+            <button class="btn btn-success" (click)="approveRequest(request.id)">Approve</button> &nbsp;
             <button class="btn btn-danger" (click)="rejectRequest(request.id)">Reject</button>
           </td>
         </tr>

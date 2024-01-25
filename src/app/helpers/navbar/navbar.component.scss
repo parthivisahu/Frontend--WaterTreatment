@@ -1,20 +1,54 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
-mat-menu{
-    right:0;
-}
-
-mat-toolbar{
-    background-color: rgba(78, 168, 241, 0.833);
-    color: rgb(18, 23, 30);
-}
-
+/* Navbar Styles */
 a{
     text-decoration: none;
-    color: black;
+    color: #000;
 }
-
-a:hover{
+.mat-toolbar {
+    background-color: rgba(78, 168, 241, 0.833);
+    color: rgb(18, 23, 30);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .brand-link {
+    font-size: 24px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover {
     color: rgb(70, 69, 69);
-}
+  }
+  
+  button[mat-icon-button] {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .mat-menu-panel {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-menu-item {
+    color: #000;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .mat-menu-item:hover {
+    background-color: #f0f0f0;
+  }
+  
